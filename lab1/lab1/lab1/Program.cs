@@ -26,7 +26,7 @@ namespace lab1
                         {
                             Console.WriteLine(i.GetNames() + i.GetMarks());
                         }
-                    }
+                    } //Второй коммит(Second commit)
                     break;
                 case 2: Console.WriteLine("Введите номер группы");
                     string number = Console.ReadLine();
