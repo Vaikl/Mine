@@ -37,6 +37,6 @@ namespace lab1
                         break;
             }
             Console.ReadKey();
-        }
+        }//Третий коммит(Third commit)
     }
 }
