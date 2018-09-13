@@ -9,7 +9,7 @@ namespace lab1
     class Program
     {
         static void Main(string[] args)
-        {
+        { //Первый коммит(first commit)
             Student q = new Student("qwe", new List<int>(){1, 2, 3, 4, 5});
             Student w = new Student("ewq", new List<int>() {5, 6, 7, 8, 9 });
             Student e = new Student("asd", new List<int>() {5, 6, 6, 7, 8 });
