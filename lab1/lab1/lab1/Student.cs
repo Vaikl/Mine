@@ -14,7 +14,7 @@ namespace lab1
         public string GetNames()
         {
             return names;
-        }
+        }//change similar file
 
         public float GetMarks()
         {
