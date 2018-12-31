@@ -1,0 +1,20 @@
+№ 1: Невозможность ввода даты задним числом
+Ожидаемый результат: Приложение не дает выбрать дату прошедшим числом. Passed
+№ 2: Корректное отображение результатов поиска
+Ожидаемый результат: Выводит результат относительно введенным данным. Passed
+№ 3: Проверка невозможности ввода только одной точки назначения
+Ожидаемый результат: Выводится всплывающее сообщение «Please enter a 'To' airport.» Passed
+№ 4: Проверка выбора в качестве пассажира подростка(от 12 лет) без взрослого
+Ожидаемый результат: Выводится всплывающее сообщение «Cheapflights does not currently support searches for unaccompanied minors. We recommend that you check the minimum age requirements as well as what other fees apply for the airline you plan to book with, before you book.» Passed
+№ 5: Ограниченное число пассажиров
+Ожидаемый результат: Приложение ограничивает число добавления билетов для пассажиров. Passed	
+№ 6: Обязательный ввод пассажира
+Ожидаемый результат: Приложение ограничивает число добавления билетов для пассажиров. Passed	
+№ 7: Точка отправления и прибытия не может быть одно и то же место
+Ожидаемый результат: Выводится всплывающее сообщение «Please enter unique 'From' and 'To' airports.» Passed
+№ 8: Находит ваше местоположение
+Ожидаемый результат: Выводится ближайший аэропорт как станция назначения. Passed
+№ 9: Невозможность ввода пассажира-младенца(до 2 лет) без сопровождения взрослых
+Ожидаемый результат: Выводится всплывающее сообщение «Cheapflights does not currently support searches for unaccompanied minors. We recommend that you check the minimum age requirements as well as what other fees apply for the airline you plan to book with, before you book.» Passed
+№ 10: Невозможность ввода пассажира ребенка(от 2 до 11 лет) без сопровождения взрослых
+Ожидаемый результат: Выводится всплывающее сообщение «Cheapflights does not currently support searches for unaccompanied minors. We recommend that you check the minimum age requirements as well as what other fees apply for the airline you plan to book with, before you book.» Passed
