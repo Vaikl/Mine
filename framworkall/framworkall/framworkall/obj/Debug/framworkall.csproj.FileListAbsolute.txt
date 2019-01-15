@@ -1,0 +1,15 @@
+C:\Users\artik\Desktop\framworkall\framworkall\framworkall\bin\Debug\framworkall.exe.config
+C:\Users\artik\Desktop\framworkall\framworkall\framworkall\bin\Debug\framworkall.exe
+C:\Users\artik\Desktop\framworkall\framworkall\framworkall\bin\Debug\framworkall.pdb
+C:\Users\artik\Desktop\framworkall\framworkall\framworkall\bin\Debug\nunit.framework.dll
+C:\Users\artik\Desktop\framworkall\framworkall\framworkall\bin\Debug\WebDriver.dll
+C:\Users\artik\Desktop\framworkall\framworkall\framworkall\bin\Debug\WebDriver.Support.dll
+C:\Users\artik\Desktop\framworkall\framworkall\framworkall\bin\Debug\nunit.framework.pdb
+C:\Users\artik\Desktop\framworkall\framworkall\framworkall\bin\Debug\nunit.framework.xml
+C:\Users\artik\Desktop\framworkall\framworkall\framworkall\bin\Debug\WebDriver.xml
+C:\Users\artik\Desktop\framworkall\framworkall\framworkall\bin\Debug\WebDriver.Support.xml
+C:\Users\artik\Desktop\framworkall\framworkall\framworkall\obj\Debug\framworkall.csprojAssemblyReference.cache
+C:\Users\artik\Desktop\framworkall\framworkall\framworkall\obj\Debug\framworkall.csproj.CoreCompileInputs.cache
+C:\Users\artik\Desktop\framworkall\framworkall\framworkall\obj\Debug\framworkall.csproj.CopyComplete
+C:\Users\artik\Desktop\framworkall\framworkall\framworkall\obj\Debug\framworkall.exe
+C:\Users\artik\Desktop\framworkall\framworkall\framworkall\obj\Debug\framworkall.pdb
