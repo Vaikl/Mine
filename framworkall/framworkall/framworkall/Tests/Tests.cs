@@ -5,6 +5,7 @@ using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
 using NUnit.Framework;
+using framworkall.Pages;
 using OpenQA.Selenium;
 using Assert = NUnit.Framework.Assert;
 
@@ -13,6 +14,7 @@ namespace framworkall.Tests
     [TestFixture]
     class Tests
     {
+        private Main mainPage1;
         private Steps.Steps steps = new Steps.Steps();
 
         [SetUp]
@@ -33,8 +35,10 @@ namespace framworkall.Tests
             var cityName = "Minsk";
             var date = "01.03.2019";
             steps.OpenMainPage();
-            steps.SelectFromCity().SendKeys(cityName);
-            steps.SelectDepartDate().SendKeys(date);
+            mainPage1.departure.SendKeys(cityName);
+            //  steps.SelectFromCity().SendKeys(cityName);
+            mainPage1.departureDate.SendKeys(date);
+          //  steps.SelectDepartDate().SendKeys(date);
             steps.FindResults();
             Thread.Sleep(2000);
             var errorMessage = steps.GetErrorMessage1();
