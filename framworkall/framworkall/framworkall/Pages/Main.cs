@@ -29,7 +29,7 @@ namespace framworkall.Pages
         [FindsBy(How = How.XPath, Using = "//div[@aria-label='Departure date input']")]
         public IWebElement departureDate { get; set; }
 
-        [FindsBy(How = How.XPath, Using = "//div[@class='keel-grid keel-form search-form-grid search-form-grid-flights']//div[@class='col button-col']//div//button[@class='Common-Widgets-Button-ButtonDeprecated Common-Widgets-Button-Button size-m searchButton']")]
+        [FindsBy(How = How.XPath, Using = "//div[@class='keel-grid keel-form search-form-grid search-form-grid-flights']//div[@class='col button-col']//div//button")]
         public IWebElement find { get; set; }
 
         [FindsBy(How = How.XPath, Using = "//a[@aria-label='Select number of travellers and cabin class']//div[@class='label']")]
