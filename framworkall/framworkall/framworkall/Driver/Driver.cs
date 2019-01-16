@@ -17,8 +17,7 @@ namespace framworkall.Driver
             if (driver == null)
             {
                 driver = new ChromeDriver();
-                driver.Manage().Timeouts().ImplicitWait.Add(TimeSpan.FromSeconds(15));
-                driver.Manage().Window.Maximize();
+               
             }
             return driver;
         }
