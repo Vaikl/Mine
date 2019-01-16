@@ -67,17 +67,21 @@ namespace framworkall.Steps
         public void IncreaseAdult()
         {
             mainPage.passangers.Click();
+            Thread.Sleep(2000);
             mainPage.adultPlusValue.Click();
         }
 
         public void OpenHotel()
         {
             hotelPage.typeHotel.Click();
+            Thread.Sleep(2000);
         }
 
         public void FindHotel()
         {
+            Thread.Sleep(2000);
             hotelPage.findHotel.Click();
+            Thread.Sleep(2000);
         }
 
         public void DecreaseAdult()
@@ -104,12 +108,15 @@ namespace framworkall.Steps
         public void OpenPasssangers()
         {
             mainPage.passangers.Click();
+            Thread.Sleep(2000);
         }
 
         public void FindResults()
         {
+            Thread.Sleep(2000);
             mainPage.find.Click();
             Thread.Sleep(2000);
+
         }
 
         public void OpenHotelPage()
