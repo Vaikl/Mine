@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Threading;
 using System.Threading.Tasks;
 using framworkall.Pages;
 using OpenQA.Selenium;
@@ -34,24 +35,30 @@ namespace framworkall.Steps
             mainPage.OpenPage();
         }
 
-        public IWebElement SelectFromCity()
+        public void InsertFromCity(string cityName_dep)
         {
-            return mainPage.departure;
+            mainPage.departure.Click();
+            mainPage.departure.SendKeys(cityName_dep);
         }
 
-        public IWebElement SelectToCity()
+        public void InserToCity(string cityName_des)
         {
-            return mainPage.destination;
+            mainPage.destination.Click();
+           mainPage.destination.SendKeys(cityName_des);
         }
 
-        public IWebElement SelectDepartDate()
+        public void SelectDepartDate(string dateDep)
         {
-            return mainPage.departureDate;
+            mainPage.departureDate.Click();
+            mainPage.departureDate.SendKeys(dateDep);
+            mainPage.departureDate.SendKeys(Keys.Enter);
+            mainPage.departureDate.SendKeys(Keys.Enter);
         }
 
-        public IWebElement SelectStauing()
+        public void SelectStauing(string hotelDest)
         {
-            return hotelPage.destinationHotel;
+            hotelPage.destinationHotel.Click();
+            hotelPage.destinationHotel.SendKeys(hotelDest);
         }
 
         public void IncreaseAdult()
@@ -99,6 +106,7 @@ namespace framworkall.Steps
         public void FindResults()
         {
             mainPage.find.Click();
+            Thread.Sleep(2000);
         }
 
         public void OpenHotelPage()

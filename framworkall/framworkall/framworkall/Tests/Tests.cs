@@ -14,7 +14,6 @@ namespace framworkall.Tests
     [TestFixture]
     class Tests
     {
-        private Main mainPage1;
         private Steps.Steps steps = new Steps.Steps();
 
         [SetUp]
@@ -35,12 +34,9 @@ namespace framworkall.Tests
             var cityName = "Minsk";
             var date = "01.03.2019";
             steps.OpenMainPage();
-            mainPage1.departure.SendKeys(cityName);
-            //  steps.SelectFromCity().SendKeys(cityName);
-            mainPage1.departureDate.SendKeys(date);
-          //  steps.SelectDepartDate().SendKeys(date);
+            steps.InsertFromCity(cityName);
+            steps.SelectDepartDate(date);
             steps.FindResults();
-            Thread.Sleep(2000);
             var errorMessage = steps.GetErrorMessage1();
              Assert.AreEqual(errorMessage, "Please enter a 'To' airport.");
         }
@@ -52,12 +48,10 @@ namespace framworkall.Tests
             var toCity = "Minsk";
             var departDay = "01.03.2019";
             steps.OpenMainPage();
-            steps.SelectFromCity().SendKeys(fromCity);
-            steps.SelectToCity().SendKeys(toCity);
-            steps.SelectDepartDate().SendKeys(departDay);
-            steps.SelectDepartDate().SendKeys(Keys.Enter);
+            steps.InsertFromCity(fromCity);
+            steps.InserToCity(toCity);
+            steps.SelectDepartDate(departDay);
             steps.FindResults();
-            Thread.Sleep(2000);
             var errorMessage = steps.GetErrorMessage1();
             Assert.AreEqual(errorMessage, "Please enter unique 'From' and 'To' airports.");
         }
@@ -69,12 +63,10 @@ namespace framworkall.Tests
             var toCity = "Moscow";
             var departDay = "03.04.2018";
             steps.OpenMainPage();
-            steps.SelectFromCity().SendKeys(fromCity);
-            steps.SelectToCity().SendKeys(toCity);
-            steps.SelectDepartDate().SendKeys(departDay);       
-            steps.SelectDepartDate().SendKeys(Keys.Enter);
+            steps.InsertFromCity(fromCity);
+            steps.InserToCity(toCity);
+            steps.SelectDepartDate(departDay);       
             steps.FindResults();
-            Thread.Sleep(2000);
             var errorMessage = steps.GetErrorMessage1();
             Assert.AreEqual(errorMessage, "Please enter a valid 'Depart' date.");
         }
@@ -85,11 +77,9 @@ namespace framworkall.Tests
             var fromCity = "Minsk";
             var toCity = "Moscow";
             steps.OpenMainPage();
-            steps.SelectFromCity().SendKeys(fromCity);
-            steps.SelectToCity().SendKeys(toCity);
-            steps.SelectToCity().SendKeys(Keys.Enter);
+            steps.InsertFromCity(fromCity);
+            steps.InserToCity(toCity);
             steps.FindResults();
-            Thread.Sleep(2000);
             var errorMessage = steps.GetErrorMessage1();
             Assert.AreEqual(errorMessage, "Please enter a valid 'Depart' date.");
         }
@@ -113,15 +103,12 @@ namespace framworkall.Tests
             var toCity = "Moscow";
             var departDay = "03.04.2019";
             steps.OpenMainPage();
-            steps.SelectFromCity().SendKeys(fromCity);
-            steps.SelectToCity().SendKeys(toCity);
-            steps.SelectToCity().SendKeys(Keys.Enter);
-            steps.SelectDepartDate().SendKeys(departDay);
-            steps.SelectDepartDate().SendKeys(Keys.Enter);
+            steps.InsertFromCity(fromCity);
+            steps.InserToCity(toCity);
+            steps.SelectDepartDate(departDay);
             steps.IncreaseYouth();
             steps.DecreaseAdult();
             steps.FindResults();
-            Thread.Sleep(2000);
             var errorMessage = steps.GetErrorMessage2();
             Assert.AreEqual(errorMessage, "About unaccompanied minors");
         }
@@ -133,15 +120,12 @@ namespace framworkall.Tests
             var toCity = "Moscow";
             var departDay = "03.04.2019";
             steps.OpenMainPage();
-            steps.SelectFromCity().SendKeys(fromCity);
-            steps.SelectToCity().SendKeys(toCity);
-            steps.SelectToCity().SendKeys(Keys.Enter);
-            steps.SelectDepartDate().SendKeys(departDay);
-            steps.SelectDepartDate().SendKeys(Keys.Enter);
+            steps.InsertFromCity(fromCity);
+            steps.InserToCity(toCity);
+            steps.SelectDepartDate(departDay);
             steps.IncreaseChild();
             steps.DecreaseAdult();
             steps.FindResults();
-            Thread.Sleep(2000);
             var errorMessage = steps.GetErrorMessage2();
             Assert.AreEqual(errorMessage, "About unaccompanied minors");
         }
@@ -153,11 +137,9 @@ namespace framworkall.Tests
             var toCity = "Moscow";
             var departDay = "03.04.2019";
             steps.OpenMainPage();
-            steps.SelectFromCity().SendKeys(fromCity);
-            steps.SelectToCity().SendKeys(toCity);
-            steps.SelectToCity().SendKeys(Keys.Enter);
-            steps.SelectDepartDate().SendKeys(departDay);
-            steps.SelectDepartDate().SendKeys(Keys.Enter);
+            steps.InsertFromCity(fromCity);
+            steps.InserToCity(toCity);
+            steps.SelectDepartDate(departDay);
             steps.IncreaseBaby();
             steps.DecreaseAdult();
             steps.FindResults();
@@ -182,7 +164,7 @@ namespace framworkall.Tests
         {
             steps.OpenMainPage();
             steps.OpenHotel();
-            steps.SelectStauing().SendKeys("Minsk");
+            steps.SelectStauing("Minsk");
             steps.FindHotel();
             Thread.Sleep(2000);
             var errorMessage = steps.GetErrorMessageHotel();
