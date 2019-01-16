@@ -16,8 +16,7 @@ namespace framworkall.Driver
         {
             if (driver == null)
             {
-                driver = new ChromeDriver();
-               
+                driver = new ChromeDriver();            
             }
             return driver;
         }
