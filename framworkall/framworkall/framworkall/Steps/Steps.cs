@@ -89,8 +89,11 @@ namespace framworkall.Steps
 
         public void IncreaseYouth()
         {
-            mainPage.passangers.Click();
             mainPage.youthPlusValue.Click();
+        }
+        public void OpenPasssangers()
+        {
+            mainPage.passangers.Click();
         }
 
         public void FindResults()

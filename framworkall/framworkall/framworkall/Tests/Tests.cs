@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Threading;
 using System.Threading.Tasks;
 using NUnit.Framework;
 using OpenQA.Selenium;
@@ -35,7 +36,8 @@ namespace framworkall.Tests
             steps.SelectFromCity().SendKeys(cityName);
             steps.SelectDepartDate().SendKeys(date);
             steps.FindResults();
-             var errorMessage = steps.GetErrorMessage1();
+            Thread.Sleep(2000);
+            var errorMessage = steps.GetErrorMessage1();
              Assert.AreEqual(errorMessage, "Please enter a 'To' airport.");
         }
 
@@ -51,6 +53,7 @@ namespace framworkall.Tests
             steps.SelectDepartDate().SendKeys(departDay);
             steps.SelectDepartDate().SendKeys(Keys.Enter);
             steps.FindResults();
+            Thread.Sleep(2000);
             var errorMessage = steps.GetErrorMessage1();
             Assert.AreEqual(errorMessage, "Please enter unique 'From' and 'To' airports.");
         }
@@ -67,6 +70,7 @@ namespace framworkall.Tests
             steps.SelectDepartDate().SendKeys(departDay);       
             steps.SelectDepartDate().SendKeys(Keys.Enter);
             steps.FindResults();
+            Thread.Sleep(2000);
             var errorMessage = steps.GetErrorMessage1();
             Assert.AreEqual(errorMessage, "Please enter a valid 'Depart' date.");
         }
@@ -81,6 +85,7 @@ namespace framworkall.Tests
             steps.SelectToCity().SendKeys(toCity);
             steps.SelectToCity().SendKeys(Keys.Enter);
             steps.FindResults();
+            Thread.Sleep(2000);
             var errorMessage = steps.GetErrorMessage1();
             Assert.AreEqual(errorMessage, "Please enter a valid 'Depart' date.");
         }
@@ -89,7 +94,9 @@ namespace framworkall.Tests
         public void LimitedPassangersTest()
         {
             steps.OpenMainPage();
-            for(int i=0;i<9;i++)
+            steps.OpenPasssangers();
+            Thread.Sleep(2000);
+            for (int i=0;i<8;i++)
             steps.IncreaseAdult();
             Assert.Fail();
         }
@@ -110,6 +117,7 @@ namespace framworkall.Tests
             steps.IncreaseYouth();
             steps.DecreaseAdult();
             steps.FindResults();
+            Thread.Sleep(2000);
             var errorMessage = steps.GetErrorMessage2();
             Assert.AreEqual(errorMessage, "About unaccompanied minors");
         }
@@ -129,6 +137,7 @@ namespace framworkall.Tests
             steps.IncreaseChild();
             steps.DecreaseAdult();
             steps.FindResults();
+            Thread.Sleep(2000);
             var errorMessage = steps.GetErrorMessage2();
             Assert.AreEqual(errorMessage, "About unaccompanied minors");
         }
@@ -148,6 +157,7 @@ namespace framworkall.Tests
             steps.IncreaseBaby();
             steps.DecreaseAdult();
             steps.FindResults();
+            Thread.Sleep(2000);
             var errorMessage = steps.GetErrorMessage2();
             Assert.AreEqual(errorMessage, "About unaccompanied minors");
         }
@@ -158,6 +168,7 @@ namespace framworkall.Tests
             steps.OpenMainPage();
             steps.OpenHotel();
             steps.FindHotel();
+            Thread.Sleep(2000);
             var errorMessage = steps.GetErrorMessageHotel();
             Assert.AreEqual(errorMessage, "Please enter a city, hotel name or landmark.");
         }
@@ -169,6 +180,7 @@ namespace framworkall.Tests
             steps.OpenHotel();
             steps.SelectStauing().SendKeys("Minsk");
             steps.FindHotel();
+            Thread.Sleep(2000);
             var errorMessage = steps.GetErrorMessageHotel();
             Assert.AreEqual(errorMessage, "Please enter a check-in date.");
         }
