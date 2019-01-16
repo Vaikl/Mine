@@ -15,7 +15,10 @@ namespace framworkall.Pages
         public IWebElement departure { get; set; }
      
         [FindsBy(How = How.XPath, Using = "//ul[contains(@class, 'errorMessages')]//li//ul//li")]
-        public IWebElement ErrorMessage { get; set; }
+        public IWebElement ErrorMessage1 { get; set; }
+
+        [FindsBy(How = How.XPath, Using = "//ul[contains(@class, 'errorMessages')]//li//p")]
+        public IWebElement ErrorMessage2 { get; set; }
 
         [FindsBy(How = How.XPath, Using = "//ul[contains(@class, 'errorMessages')]//li")]
         public IWebElement ErrorMessageHotel { get; set; }

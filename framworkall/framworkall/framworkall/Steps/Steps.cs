@@ -103,11 +103,18 @@ namespace framworkall.Steps
             hotelPage = new Hotels(webDriver);
         }
 
-        public string GetErrorMessage()
+        public string GetErrorMessage1()
         {
-            var errorMessage = mainPage.ErrorMessage;
+            var errorMessage = mainPage.ErrorMessage1;
             return Convert.ToString(errorMessage.Text);
         }
+
+        public string GetErrorMessage2()
+        {
+            var errorMessage = mainPage.ErrorMessage2;
+            return Convert.ToString(errorMessage.Text);
+        }
+
 
         public string GetErrorMessageHotel()
         {

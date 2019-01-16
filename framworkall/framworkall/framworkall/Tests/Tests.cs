@@ -35,7 +35,7 @@ namespace framworkall.Tests
             steps.SelectFromCity().SendKeys(cityName);
             steps.SelectDepartDate().SendKeys(date);
             steps.FindResults();
-             var errorMessage = steps.GetErrorMessage();
+             var errorMessage = steps.GetErrorMessage1();
              Assert.AreEqual(errorMessage, "Please enter a 'To' airport.");
         }
 
@@ -51,7 +51,7 @@ namespace framworkall.Tests
             steps.SelectDepartDate().SendKeys(departDay);
             steps.SelectDepartDate().SendKeys(Keys.Enter);
             steps.FindResults();
-            var errorMessage = steps.GetErrorMessage();
+            var errorMessage = steps.GetErrorMessage1();
             Assert.AreEqual(errorMessage, "Please enter unique 'From' and 'To' airports.");
         }
 
@@ -67,7 +67,7 @@ namespace framworkall.Tests
             steps.SelectDepartDate().SendKeys(departDay);       
             steps.SelectDepartDate().SendKeys(Keys.Enter);
             steps.FindResults();
-            var errorMessage = steps.GetErrorMessage();
+            var errorMessage = steps.GetErrorMessage1();
             Assert.AreEqual(errorMessage, "Please enter a valid 'Depart' date.");
         }
 
@@ -81,7 +81,7 @@ namespace framworkall.Tests
             steps.SelectToCity().SendKeys(toCity);
             steps.SelectToCity().SendKeys(Keys.Enter);
             steps.FindResults();
-            var errorMessage = steps.GetErrorMessage();
+            var errorMessage = steps.GetErrorMessage1();
             Assert.AreEqual(errorMessage, "Please enter a valid 'Depart' date.");
         }
 
@@ -91,7 +91,7 @@ namespace framworkall.Tests
             steps.OpenMainPage();
             for(int i=0;i<9;i++)
             steps.IncreaseAdult();
-            
+            Assert.Fail();
         }
 
 
@@ -110,8 +110,8 @@ namespace framworkall.Tests
             steps.IncreaseYouth();
             steps.DecreaseAdult();
             steps.FindResults();
-            var errorMessage = steps.GetErrorMessage();
-            Assert.AreEqual(errorMessage, "Cheapflights does not currently support searches for unaccompanied minors. We recommend that you check the minimum age requirements as well as what other fees apply for the airline you plan to book with, before you book.");
+            var errorMessage = steps.GetErrorMessage2();
+            Assert.AreEqual(errorMessage, "About unaccompanied minors");
         }
 
         [Test]
@@ -129,8 +129,8 @@ namespace framworkall.Tests
             steps.IncreaseChild();
             steps.DecreaseAdult();
             steps.FindResults();
-            var errorMessage = steps.GetErrorMessage();
-            Assert.AreEqual(errorMessage, "Cheapflights does not currently support searches for unaccompanied minors. We recommend that you check the minimum age requirements as well as what other fees apply for the airline you plan to book with, before you book.");
+            var errorMessage = steps.GetErrorMessage2();
+            Assert.AreEqual(errorMessage, "About unaccompanied minors");
         }
 
         [Test]
@@ -148,13 +148,14 @@ namespace framworkall.Tests
             steps.IncreaseBaby();
             steps.DecreaseAdult();
             steps.FindResults();
-            var errorMessage = steps.GetErrorMessage();
-            Assert.AreEqual(errorMessage, "Cheapflights does not currently support searches for unaccompanied minors. We recommend that you check the minimum age requirements as well as what other fees apply for the airline you plan to book with, before you book.");
+            var errorMessage = steps.GetErrorMessage2();
+            Assert.AreEqual(errorMessage, "About unaccompanied minors");
         }
 
         [Test]
         public void StaingDidntExist()
         {
+            steps.OpenMainPage();
             steps.OpenHotel();
             steps.FindHotel();
             var errorMessage = steps.GetErrorMessageHotel();
@@ -164,6 +165,7 @@ namespace framworkall.Tests
         [Test]
         public void HotelsDateDidntExist()
         {
+            steps.OpenMainPage();
             steps.OpenHotel();
             steps.SelectStauing().SendKeys("Minsk");
             steps.FindHotel();
