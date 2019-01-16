@@ -33,12 +33,14 @@ namespace framworkall.Steps
             mainPage = new Main(webDriver);
 
             mainPage.OpenPage();
+            Thread.Sleep(2000);
         }
 
         public void InsertFromCity(string cityName_dep)
         {
             mainPage.departure.Click();
             mainPage.departure.SendKeys(cityName_dep);
+            Thread.Sleep(2000);
         }
 
         public void InserToCity(string cityName_des)
@@ -49,7 +51,6 @@ namespace framworkall.Steps
 
         public void SelectDepartDate(string dateDep)
         {
-            mainPage.departureDate.Click();
             mainPage.departureDate.SendKeys(dateDep);
             mainPage.departureDate.SendKeys(Keys.Enter);
             mainPage.departureDate.SendKeys(Keys.Enter);
