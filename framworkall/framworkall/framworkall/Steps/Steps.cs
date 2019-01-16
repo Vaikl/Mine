@@ -47,6 +47,8 @@ namespace framworkall.Steps
         {
             mainPage.destination.Click();
            mainPage.destination.SendKeys(cityName_des);
+            mainPage.destination.SendKeys(Keys.Enter);
+            Thread.Sleep(2000);
         }
 
         public void SelectDepartDate(string dateDep)

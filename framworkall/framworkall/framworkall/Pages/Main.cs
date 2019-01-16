@@ -11,7 +11,7 @@ namespace framworkall.Pages
     class Main
     {
         private const string BASE_URL = "https://www.cheapflights.ca";
-        [FindsBy(How = How.ClassName, Using = "Common-Widgets-Text-TextInput")]
+        [FindsBy(How = How.XPath, Using = "//input[@name='origin']")]
         public IWebElement departure { get; set; }
      
         [FindsBy(How = How.XPath, Using = "//ul[contains(@class, 'errorMessages')]//li//ul//li")]
@@ -23,16 +23,16 @@ namespace framworkall.Pages
         [FindsBy(How = How.XPath, Using = "//ul[contains(@class, 'errorMessages')]//li")]
         public IWebElement ErrorMessageHotel { get; set; }
 
-        [FindsBy(How = How.Name, Using = "destination")]
+        [FindsBy(How = How.XPath, Using = "//input[@name='destination']")]
         public IWebElement destination { get; set; }
 
-        [FindsBy(How = How.ClassName, Using = "dateInput")]
+        [FindsBy(How = How.XPath, Using = "//div[@aria-label='Departure date input']")]
         public IWebElement departureDate { get; set; }
 
-        [FindsBy(How = How.ClassName, Using = "button-col")]
+        [FindsBy(How = How.XPath, Using = "//div[@class='col button-col']//div[@class='fieldBlock buttonBlock']//button")]
         public IWebElement find { get; set; }
 
-        [FindsBy(How = How.ClassName, Using = "hasValue")]
+        [FindsBy(How = How.XPath, Using = "//a[@aria-label='Select number of travellers and cabin class']//div[@class='label']")]
         public IWebElement passangers { get; set; }
 
         [FindsBy(How = How.XPath, Using = "//button[@title='Increment']")]

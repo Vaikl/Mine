@@ -10,7 +10,7 @@ namespace framworkall.Pages
 {
     class Hotels
     {
-        [FindsBy(How = How.ClassName, Using = "hotelsLink")]
+        [FindsBy(How = How.XPath, Using = "//button[@data-form='hotels']")]
         public IWebElement typeHotel { get; set; }
 
         [FindsBy(How = How.XPath, Using = "//input[@aria-label='Staying in']")]
